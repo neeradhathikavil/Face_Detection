@@ -73,10 +73,10 @@ with tab_snap:
     shot = st.camera_input("Take a picture")
     if shot:
         img, n = detect_pil(Image.open(shot), conf)
-        st.image(img, caption=f"Faces detected: {n}", use_container_width=True)
+        st.image(img, caption=f"Faces detected: {n}", use_container_width=True, output_format="PNG")
 
 with tab_up:
     f = st.file_uploader("Upload a photo", type=["jpg", "jpeg", "png"])
     if f:
         img, n = detect_pil(Image.open(f), conf)
-        st.image(img, caption=f"Faces detected: {n}", use_container_width=True)
+        st.image(img, caption=f"Faces detected: {n}", use_container_width=True, output_format="PNG")
